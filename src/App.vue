@@ -1,28 +1,42 @@
+<!-- App.vue -->
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <BoardElement ref="boardElement" @win="handleWin" @tie="handleTie" />
+    <RestartButton @click="restartGame" />
+    <p v-if="status" class="status">{{ status }}</p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import BoardElement from './components/BoardElement.vue';
+import RestartButton from './components/RestartButton.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    BoardElement,
+    RestartButton,
+  },
+  data() {
+    return {
+      status: '',
+    };
+  },
+  methods: {
+    handleWin(winner) {
+      this.status = `${winner} wins!`;
+    },
+    handleTie() {
+      this.status = 'It\'s a tie!';
+    },
+    restartGame() {
+      this.status = '';
+      this.$refs.boardElement.reset();
+    },
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import './assets/styles.css';
 </style>

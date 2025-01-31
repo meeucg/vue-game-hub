@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap');
+
+:root {
+    --light-gray: #f0f0f0;
+    --medium-gray: #b0b0b0;
+    --dark-gray: #333333;
+    --white: #ffffff;
+  }
+  
+  * {
+    font-family: 'Jost', sans-serif;
+  }
+
+  body {
+    background-color: var(--light-gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  #app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Board Styles */
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 300px;
+    max-width: 90vw;
+    margin-bottom: 20px;
+  }
+  
+  /* Square Styles */
+  .square {
+    width: 100%;
+    padding-bottom: 100%; /* Makes the square responsive */
+    background-color: var(--white);
+    /* border: 2px solid var(--medium-gray); */
+    border-radius: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+  }
+  
+  .square:hover {
+    background-color: var(--medium-gray);
+  }
+  
+  /* Tic and Tac Icons */
+  .square img {
+    width: 60%;
+    height: 60%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Restart Button Styles */
+  .restart-button {
+    padding: 10px 20px;
+    background-color: var(--dark-gray);
+    color: var(--white);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+  }
+  
+  .restart-button:hover {
+    background-color: #000000;
+  }
+  
+  /* Status Message */
+  .status {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+  }
+  
