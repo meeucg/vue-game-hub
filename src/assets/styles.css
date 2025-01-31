@@ -3,6 +3,7 @@
 :root {
     --light-gray: #f0f0f0;
     --medium-gray: #b0b0b0;
+    --medium-dark-gray: #666666;
     --dark-gray: #333333;
     --white: #ffffff;
   }
@@ -26,7 +27,6 @@
     align-items: center;
   }
   
-  /* Board Styles */
   .board {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -36,24 +36,21 @@
     margin-bottom: 20px;
   }
   
-  /* Square Styles */
   .square {
     width: 100%;
-    padding-bottom: 100%; /* Makes the square responsive */
+    padding-bottom: 100%;
     background-color: var(--white);
-    /* border: 2px solid var(--medium-gray); */
     border-radius: 15px;
     position: relative;
     cursor: pointer;
     transition: background-color 0.3s;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    box-sizing: border-box;
   }
   
   .square:hover {
     background-color: var(--medium-gray);
   }
-  
-  /* Tic and Tac Icons */
+
   .square img {
     width: 60%;
     height: 60%;
@@ -62,8 +59,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  
-  /* Restart Button Styles */
+
   .restart-button {
     padding: 10px 20px;
     background-color: var(--dark-gray);
@@ -79,8 +75,7 @@
   .restart-button:hover {
     background-color: #000000;
   }
-  
-  /* Status Message */
+
   .status {
     text-align: center;
     font-size: 1.2rem;

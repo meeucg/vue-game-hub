@@ -1,4 +1,3 @@
-<!-- BoardElement.vue -->
 <template>
   <div>
     <div class="board">
@@ -10,7 +9,6 @@
         :value="squares[index - 1]"
       />
     </div>
-    <!-- Optional: Display winner message here if you prefer -->
   </div>
 </template>
 
@@ -76,10 +74,3 @@ export default {
   },
 };
 </script>
-
-<style>
-/* Styles specific to BoardElement.vue */
-.board {
-  /* The styles for .board are now in styles.css */
-}
-</style>

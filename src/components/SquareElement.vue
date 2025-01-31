@@ -1,4 +1,3 @@
-<!-- SquareElement.vue -->
 <template>
   <div class="square" @click="$emit('click')">
     <img v-if="value === 'X'" src="@/assets/tic.svg" alt="X" />
